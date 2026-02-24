@@ -1,48 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Perdón 😿</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perdón Belén ❤️</title>
+
+<style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f6f6f6;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #ff6a88, #ff99ac);
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+        text-align: center;
+        color: white;
     }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      text-align: center;
-      max-width: 350px;
+
+    .contenedor {
+        animation: aparecer 2s ease-in-out;
+        z-index: 2;
     }
-    img {
-      width: 100%;
-      border-radius: 12px;
-    }
+
     h1 {
-      margin: 15px 0 10px;
+        font-size: 2.8rem;
+        margin-bottom: 15px;
     }
+
     p {
-      font-size: 16px;
-      color: #555;
+        font-size: 1.8rem;
+        margin-bottom: 25px;
     }
-  </style>
+
+    button {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        background-color: white;
+        color: #ff4d6d;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background-color: #ffe0e6;
+        transform: scale(1.1);
+    }
+
+    .corazon {
+        position: absolute;
+        font-size: 20px;
+        animation: flotar 5s linear infinite;
+        opacity: 0.7;
+    }
+
+    @keyframes flotar {
+        0% { transform: translateY(100vh) scale(1); }
+        100% { transform: translateY(-10vh) scale(1.5); }
+    }
+
+    @keyframes aparecer {
+        from { opacity: 0; transform: scale(0.8); }
+        to { opacity: 1; transform: scale(1); }
+    }
+</style>
 </head>
+
 <body>
-  <div class="card">
-    <img src="https://placekitten.com/400/300" alt="Gatito triste">
-    <h1>Perdón 😿</h1>
-    <p>
-      Tardé <strong>2 minutos</strong> en devolver la llamada.<br>
-      El gatito está muy arrepentido.<br>
-      ¿Me perdonás? 🐾
-    </p>
-  </div>
+
+<div class="contenedor">
+    <h1>Belén, mi bebé tiquitita 🥺</h1>
+    <p id="mensaje">Te pido perdón de corazón… Te amo muchísimo ❤️</p>
+    <button onclick="perdon()">¿Me perdonás? 💌</button>
+</div>
+
+<script>
+function perdon() {
+    document.getElementById("mensaje").innerHTML =
+        "Prometo cuidarte, respetarte y amarte todos los días de mi vida 💖 Gracias por ser mi persona favorita ✨";
+}
+
+function crearCorazon() {
+    const corazon = document.createElement("div");
+    corazon.classList.add("corazon");
+    corazon.innerHTML = "❤️";
+    corazon.style.left = Math.random() * 100 + "vw";
+    corazon.style.fontSize = Math.random() * 30 + 15 + "px";
+    corazon.style.animationDuration = Math.random() * 3 + 3 + "s";
+    document.body.appendChild(corazon);
+
+    setTimeout(() => {
+        corazon.remove();
+    }, 5000);
+}
+
+setInterval(crearCorazon, 300);
+</script>
+
 </body>
 </html>
