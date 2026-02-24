@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perdón Belén ❤️</title>
+<title>Para Belén ❤️</title>
 
 <style>
     body {
@@ -13,7 +13,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: linear-gradient(135deg, #ff6a88, #ff99ac);
+        background: black;
         font-family: Arial, sans-serif;
         overflow: hidden;
         text-align: center;
@@ -21,42 +21,46 @@
     }
 
     .contenedor {
-        animation: aparecer 2s ease-in-out;
         z-index: 2;
+        animation: aparecer 2s ease-in-out;
     }
 
     h1 {
         font-size: 2.8rem;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
+        color: #ff4d6d;
+        text-shadow: 0 0 15px #ff4d6d;
     }
 
     p {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         margin-bottom: 25px;
     }
 
     button {
         padding: 15px 30px;
         font-size: 1.2rem;
-        border: none;
+        border: 2px solid #ff4d6d;
         border-radius: 30px;
         cursor: pointer;
-        background-color: white;
+        background: transparent;
         color: #ff4d6d;
         font-weight: bold;
         transition: 0.3s;
     }
 
     button:hover {
-        background-color: #ffe0e6;
+        background: #ff4d6d;
+        color: black;
+        box-shadow: 0 0 20px #ff4d6d;
         transform: scale(1.1);
     }
 
     .corazon {
         position: absolute;
         font-size: 20px;
-        animation: flotar 5s linear infinite;
-        opacity: 0.7;
+        animation: flotar 6s linear infinite;
+        opacity: 0.6;
     }
 
     @keyframes flotar {
@@ -74,21 +78,21 @@
 <body>
 
 <div class="contenedor">
-    <h1>Belén, mi bebé tiquitita 🥺</h1>
-    <p id="mensaje">Te pido perdón de corazón… Te amo muchísimo ❤️</p>
-    <button onclick="perdon()">¿Me perdonás? 💌</button>
+    <h1>Belén, mi bebé tiquitita 🖤</h1>
+    <p id="mensaje">Te pido perdón… Te amo muchísimo más de lo que puedo explicar ❤️</p>
+    <button onclick="perdon()">¿Me perdonás? 🥺</button>
 </div>
 
 <script>
 function perdon() {
     document.getElementById("mensaje").innerHTML =
-        "Prometo cuidarte, respetarte y amarte todos los días de mi vida 💖 Gracias por ser mi persona favorita ✨";
+        "Gracias por estar en mi vida. Prometo mejorar, cuidarte y amarte todos los días 🖤✨";
 }
 
 function crearCorazon() {
     const corazon = document.createElement("div");
     corazon.classList.add("corazon");
-    corazon.innerHTML = "❤️";
+    corazon.innerHTML = "🖤";
     corazon.style.left = Math.random() * 100 + "vw";
     corazon.style.fontSize = Math.random() * 30 + 15 + "px";
     corazon.style.animationDuration = Math.random() * 3 + 3 + "s";
@@ -96,10 +100,10 @@ function crearCorazon() {
 
     setTimeout(() => {
         corazon.remove();
-    }, 5000);
+    }, 6000);
 }
 
-setInterval(crearCorazon, 300);
+setInterval(crearCorazon, 400);
 </script>
 
 </body>
